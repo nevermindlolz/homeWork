@@ -8,6 +8,9 @@ Task.prototype.toggleComplete() = function () {
     if (this.isCompleted) {
         this.isCompleted = false
     }
+    else if (!this.isCompleted) {
+        this.isCompleted = true
+    }
     return `задача была инвертирована`;
 };
 
@@ -17,11 +20,12 @@ function User(id, name) {
     this.tasks = []
 }
 
-User.prototype.addTask(task) = () {
-    this.tasks.push(task)
+User.prototype.addTask(task) = function () {
     console.log('задача была добавлена')
+    return this.tasks.push(task)
 }
 
-User.prototype.getTasks() = () {
-    this.tasks.map(task => task)
+User.prototype.getTasks() = function () {
+    return this.tasks
 }
+
