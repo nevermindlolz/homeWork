@@ -28,13 +28,14 @@ User.prototype.getTasks = function () {
 }
 
 User.prototype.removeTask = function (taskId) {
-    const index = this.tasks.findIndex(elem => elem === taskId)
+    const index = this.tasks.findIndex(elem => elem.id === taskId)
     if (index === -1) {
         console.error(`❌ ОШИБКА!. такого ID не существует...`)
         return null
     }
     const removed = this.tasks.splice(index, 1)
     console.log(`✅ Готово! задача была успешно удалена.`)
+
 
 }
 
@@ -44,13 +45,13 @@ const task3 = new Task(3, 'сыграть в доту')
 
 const user1 = new User(23, 'Julik')
 
-task2.toggleComplete(user1)
+task2.toggleComplete()
 
 user1.addTask(task1)
 user1.addTask(task2)
 user1.addTask(task3)
 
-user1.removeTask(task1)
+user1.removeTask(1)
 
 user1.getTasks()
 
