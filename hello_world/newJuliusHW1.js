@@ -23,8 +23,8 @@ User.prototype.addTask = function (task) {
 
 User.prototype.getTasks = function () {
     console.log(`\n📄 список активных задач:\n`, this.tasks)
-
-
+    const taskFilter = this.tasks.filter(elem => elem.isCompleted === false)
+    console.log(`\n📄 список не выполненных активных задач:\n`, taskFilter)
 }
 
 User.prototype.removeTask = function (taskId) {
