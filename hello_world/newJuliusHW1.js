@@ -7,7 +7,6 @@ function Task(id, title) {
 Task.prototype.toggleComplete = function () {
     console.log(`🔄 задача была инвертирована`)
     this.isCompleted = !this.isCompleted
-
 };
 
 function User(id, name) {
@@ -34,9 +33,8 @@ User.prototype.removeTask = function (taskId) {
         return null
     }
     const removed = this.tasks.splice(index, 1)
-    console.log(`✅ Готово! задача была успешно удалена.`)
-
-
+    console.log(`✅ Готово! задача "${removed[0].title}" была успешно удалена.`)
+    return removed
 }
 
 const task1 = new Task(1, 'Помыть попу')
@@ -52,6 +50,7 @@ user1.addTask(task2)
 user1.addTask(task3)
 
 user1.removeTask(1)
+user1.removeTask(4)
 
 user1.getTasks()
 
