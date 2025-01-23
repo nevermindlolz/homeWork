@@ -411,13 +411,99 @@
 // console.log(result);
 // // "Самый высокооплачиваемый сотрудник: Sarah, зарплата: 1200"
 
-let user = { name: "Alice" };
+// let user = { name: "Alice" };
+//
+// user.age = 25; // Ничего не произойдёт
+// delete user.name; // Не сработает
+// user.name = "Bob"; // Можно изменить
+// user.id = 32
+// let user2 = Object.entries(user)
+// let result = user2.map(elem => elem.join(':'))
+// let result2 = Object.fromEntries(result.map(elem => elem.split(':')))
+// console.log(result2); // { name: "Bob" }
 
-user.age = 25; // Ничего не произойдёт
-delete user.name; // Не сработает
-user.name = "Bob"; // Можно изменить
-user.id = 32
-let user2 = Object.entries(user)
-let result = user2.map(elem => elem.join(':'))
-let result2 = Object.fromEntries(result.map(elem => elem.split(':')))
-console.log(result2); // { name: "Bob" }
+// const numbers = [10, 20, 30, 40, 50];
+//
+// function removeNumber(array, number) {
+//     if (array.includes(number)) {
+//         console.log(`🔍 Начинаем поиск числа ${number} в массиве: [${array}]`);
+//         const index = array.findIndex(num => num === number);
+//         const removed = array.splice(index, 1);
+//         console.log(`✅ Готово. Число ${removed[0]} было удалено.`);
+//         console.log(`📂 Обновлённый массив: [${array}]`);
+//     } else {
+//         console.error(`❌ Ошибка! Число ${number} отсутствует в массиве: [${array}]`);
+//     }
+// }
+//
+// removeNumber(numbers, 30); // Удаление существующего элемента
+// removeNumber(numbers, 100); // Попытка удалить отсутствующий элемент
+
+// const users = [
+//     { id: 1, name: 'Alice' },
+//     { id: 2, name: 'Bob' },
+//     { id: 3, name: 'Charlie' },
+// ];
+//
+//
+// function updateUserName(array, id, newName) {
+//     console.log(`🔍 Ищем пользователя с id: ${id}...`);
+//     const index = array.findIndex(user => user.id === id)
+//     if (index === -1) {
+//         console.error(`❌ Ошибка! Пользователь с id ${id} не найден.`)
+//         return
+//     }
+//     const oldName = array[index].name
+//     array[index].name = newName
+//     console.log(`✅ Имя пользователя изменено: "${oldName}" → "${newName}"`);
+//     console.log(`📂 Обновлённый массив пользователей:`, array);
+// }
+//
+// updateUserName(users, 2, 'Robert');
+// // Массив после обновления: [
+// //   { id: 1, name: 'Alice' },
+// //   { id: 2, name: 'Robert' },
+// //   { id: 3, name: 'Charlie' },
+// // ]
+//
+//
+// updateUserName(users, 4, 'Dave');   // Попытка обновить имя для несуществующего id
+
+// const tasks = [
+//     { id: 1, title: 'Task 1', isCompleted: false },
+//     { id: 2, title: 'Task 2', isCompleted: true },
+//     { id: 3, title: 'Task 3', isCompleted: false },
+//     { id: 4, title: 'Task 4', isCompleted: true },
+// ];
+//
+// function removeCompletedTasks(array) {
+//     const filtered = array.filter(elem => elem.isCompleted === false)
+//     console.log(filtered);
+// }
+//
+// removeCompletedTasks(tasks);
+// // Массив после удаления: [
+// //   { id: 1, title: 'Task 1', isCompleted: false },
+// //   { id: 3, title: 'Task 3', isCompleted: false },
+// // ]
+
+// const fruits = ['apple', 'banana', 'cherry', 'date'];
+//
+// function removeAndReturn(array, item) {
+//     const index = array.findIndex(elem => elem === item)
+//     if (index === -1) {
+//         console.error('элемент не найден')
+//         return null
+//     }
+//     const deleted = array.splice(index, 1)[0]
+//     console.log('удаляемый елемент:', deleted);
+//     console.log('новый массив:', array);
+// }
+//
+// const removed = removeAndReturn(fruits, 'banana');
+// // Массив после удаления: ['apple', 'cherry', 'date']
+// // Возвращает: 'banana'
+//
+// const notFound = removeAndReturn(fruits, 'orange');
+// // Массив остаётся таким же: ['apple', 'cherry', 'date']
+// // Возвращает: null
