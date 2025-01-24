@@ -21,20 +21,14 @@ User.prototype.addTask = function (task) {
 }
 
 User.prototype.getTasks = function () {
-    console.log(`\n📄 список активных задач:\n`, this.tasks)
+    console.log(`\n📄 список всех задач:\n`, this.tasks)
     const taskFilter = this.tasks.filter(elem => elem.isCompleted === false)
-    console.log(`\n📄 список не выполненных активных задач:\n`, taskFilter)
+    console.log(`\n📄 список не выполненных задач:\n`, taskFilter)
 }
 
 User.prototype.removeTask = function (taskId) {
-    const index = this.tasks.findIndex(elem => elem.id === taskId)
-    if (index === -1) {
-        console.error(`❌ ОШИБКА!. такого ID не существует...`)
-        return null
-    }
-    const removed = this.tasks.splice(index, 1)
-    console.log(`✅ Готово! задача "${removed[0].title}" была успешно удалена.`)
-    return removed
+        removed = this.tasks.filter(elem => elem.id === taskId)
+        console.log(`✅ Готово! задача "${removed.map(elem => elem.title)}" была успешно удалена.`, )
 }
 
 const task1 = new Task(1, 'Помыть попу')
