@@ -27,8 +27,13 @@ User.prototype.getTasks = function () {
 }
 
 User.prototype.removeTask = function (taskId) {
+    if (taskId >= this.tasks.length ) {
+        console.error('❌ Ошибка! эту задачу невозможно удалить, т.к. такой задачи не существует.')
+    }
+    else {
         removed = this.tasks.filter(elem => elem.id === taskId)
-        console.log(`✅ Готово! задача "${removed.map(elem => elem.title)}" была успешно удалена.`, )
+        console.log(`✅ Готово! задача "${removed.map(elem => elem.title)}" была успешно удалена.`,)
+    }
 }
 
 const task1 = new Task(1, 'Помыть попу')
